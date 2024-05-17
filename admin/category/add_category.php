@@ -13,16 +13,21 @@ if (isset($_POST['submit'])) {
 ?>
 
 <div class="container">
-  <form method="post">
-    <div class="my-3">
-      <label for="id" class="form-label">Kategoriya ID-si (Yozish talab etilmaydi)</label>
-      <input type="text" class="form-control" id="id" name="id" disabled>
+  <div class="col-3">
+    <div class="row">
+      <form method="post">
+        <div class="my-3">
 
-      <label for="title" class="form-label">Kategoriya nomi</label>
-      <input type="text" class="form-control" id="title" name="title">
+          <label for="id" class="form-label">Kategoriya ID-si (Yozish talab etilmaydi)</label>
+          <input type="text" class="form-control" id="id" name="id" disabled>
+          <label for="title" class="form-label">Kategoriya nomi</label>
+          <input type="text" class="form-control" id="title" name="title">
+          
+        </div>
+        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
-    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-  </form>
+  </div>
 </div>
 
 <?php 

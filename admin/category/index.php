@@ -31,8 +31,10 @@ if (isset($_GET['page'])) {
           echo "<td>".$item['id']."</td>";
           echo "<td>".$item['title']."</td>";
           echo "<td>
+            <div class='btn-group'>
             <a href='/admin/category/update_category.php?id=".$item['id']."' class='btn btn-success'>Yangilash</a>
             <a href='/admin/category/delete_category.php?id=".$item['id']."' class='btn btn-danger'>O'chirish</a>
+            </div>
           </td";
           echo "</tr>";
         }
@@ -49,7 +51,7 @@ if (isset($_GET['page'])) {
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
-    <?php for($page = 1; $page <= getPagination(); $page++): ?>
+    <?php for($page = 1; $page <= getPagination("category"); $page++): ?>
       <li class="page-item">
         <a class="page-link" href="/admin/category/index.php?page=<?=$page?>"><?=$page?></a>
       </li>
