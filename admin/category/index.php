@@ -14,25 +14,35 @@ if (isset($_GET['page'])) {
     <h2>Kategoriyalar</h2>
     <a href="/admin/category/add_category.php" class="btn btn-primary">Qo'shish</a>
   </div>
-  <table class="table table-striped">
+
+  <!-- table -->
+  <table class="table table-striped table-hover">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>Title</th>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
-      <?php foreach (getCategoryList($page) as $new): ?>
-        <tr>
-          <?php foreach ($new as $detail): ?>
-            <td><?php echo $detail; ?></td>
-          <?php endforeach; ?>
-        </tr>
-      <?php endforeach; ?>
+      <?php
+        foreach (getCategoryList($page) as $item) {
+          echo "<tr>";
+          echo "<td>".$item['id']."</td>";
+          echo "<td>".$item['title']."</td>";
+          echo "<td>
+            <a href='/admin/category/update_category.php?id=".$item['id']."' class='btn btn-success'>Yangilash</a>
+            <a href='/admin/category/delete_category.php?id=".$item['id']."' class='btn btn-danger'>O'chirish</a>
+          </td";
+          echo "</tr>";
+        }
+      ?>
+      
     </tbody>
   </table>
-
   <nav aria-label="Page navigation example">
+  
+  <!-- pagination -->
   <ul class="pagination">
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Previous">
