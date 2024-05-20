@@ -9,7 +9,7 @@ if (isset($_POST["register"])) {
   $confirm_password = $_POST["confirm_password"];
 
   if ($password != $confirm_password){
-    $_SESSION['error'] = "Joriy parol tasdiqlovchi parolga teng emas!";
+    $_SESSION['error'] = "Noto'g'ri parol";
   } else {
     include '../../conn.php';
     $state = $conn->prepare('SELECT * FROM user WHERE username = :username');

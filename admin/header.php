@@ -8,11 +8,21 @@
       body {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         min-height: 100vh;
+        background: url("https://cdn.wallpaperhub.app/cloudcache/6/9/0/e/e/f/690eefe3ba1f553e0ea527f51ee407b604b681b4.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+      .navbar {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
       }
 
       .footer {
-          margin-top: auto;
+        /* margin-top: auto; */
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
       }
 
     </style>

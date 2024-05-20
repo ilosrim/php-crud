@@ -1,4 +1,7 @@
-<? session_start();?>
+<? 
+session_start();
+$_SESSION['xat'] = 'xat';
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -40,23 +43,17 @@
   </head>
   <body>
       <div class="col-md-3 card-wrapper">
-        
+        <?php
+          if ($_SESSION['error']) {
+            echo "<div class='alert alert-danger' role='alert'>".$_SESSION['error']."</div>";
+            unset($_SESSION["error"]);
+          }
+          if ($_SESSION['seccess']) {
+            echo "<div class='alert alert-danger' role='alert'>Ro'yxardan o'tdingiz</div>";
+            unset($_SESSION["seccess"]);
+          }
+        ?>
         <form method="post" action="/admin/register/registration.php">
-          <div class="mb-3">
-            <?php
-              if ($_SESSION['error']) {
-                echo "<div class='alert alert-danger' role='alert'>".$_SESSION['error']."</div>";
-                unset($_SESSION["error"]);
-              }
-              if ($_SESSION['seccess']) {
-                echo "<div class='alert alert-danger' role='alert'>Ro'yxardan o'tdingiz</div>";
-                unset($_SESSION["seccess"]);
-              }
-              if (true) {
-                echo "<div class='alert alert-danger' role='alert'>Xabar</div>";
-              }
-            ?>
-          </div>
           <div class="mb-3">
             <label for="firstname" class="form-label">Ismingizni kiriting</label>
             <input placeholder="John" type="text" class="form-control" id="firstname" name="firstname">
