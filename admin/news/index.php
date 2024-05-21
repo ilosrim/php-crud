@@ -35,20 +35,20 @@ if (isset($_GET['page'])) {
       </tr>
     </thead>
     <tbody>
-      <?php
-        foreach (getPostList($page) as $item) {
+      <?php foreach(getPostList($page) as $item):?>
+        <?php 
           $category = getCategoryById($item['category_id']);
           $author = getAuthorById($item['author_id']);
-          
-          echo "<tr>";
-          echo "<th>".$item['id']."</th>";
-          echo "<td>".$item['title']."</td>";
-          echo "<td>".substr($item['content'], 0, 40)."...</td>";
-          echo "<td>".$category['title']."</td>";
-          echo "<td>".$author['username']."</td>";
-          echo "<td>".$item['viewed_count']."</td>";
-          echo "<td>".$item['created_at']."</td>";
-          echo "<td>
+        ?>
+        <tr>
+          <th><?= $item['id'];?></th>
+          <td><?= $item['title'];?></td>
+          <td><?= substr($item['content'], 0, 40);?></td>
+          <td><?= $category['title'];?></td>
+          <td><?= $autdor['username'];?></td>
+          <td><?= $item['viewed_count'];?></td>
+          <td><?= $item['created_at'];?></td>
+          <td>
             <div class='btn-group'>
               <a href='/admin/news/update_post.php?id=".$item['id']."' class='btn btn-success d-flex align-items-center'>
                 <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-arrow-clockwise' viewBox='0 0 16 16'>
@@ -62,10 +62,9 @@ if (isset($_GET['page'])) {
                 </svg>
               </a>
             </div>
-          </td";
-          echo "</tr>";
-        }
-      ?>
+          </td>
+        </tr>
+      <?php endforeach?>
     </tbody>
   </table>
   <nav aria-label="Page navigation example">
