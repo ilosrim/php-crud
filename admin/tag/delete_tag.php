@@ -20,3 +20,7 @@ if (isset($_GET['id'])) {
   <a href="/admin/tag/delete_tag.php?id=<?=$id?>&confirm=yes" class="btn btn-danger">Ha</a>
   <a href="/admin/tag/delete_tag.php?id=<?=$id?>&confirm=no" class="btn btn-success">Yo'q</a>
 </div>
+
+<?php 
+include '../footer.php';
+?>
