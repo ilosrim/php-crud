@@ -67,27 +67,27 @@ if (isset($_GET['page'])) {
       <?php endforeach?>
     </tbody>
   </table>
-  <nav aria-label="Page navigation example">
+  <nav class="pagination_class" aria-label="Page navigation example">
   
-  <!-- pagination -->
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <?php for($page = 1; $page <= getPagination('post'); $page++): ?>
+    <!-- pagination -->
+    <ul class="pagination">
       <li class="page-item">
-        <a class="page-link" href="/admin/news/index.php?page=<?=$page?>"><?=$page?></a>
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
       </li>
-    <?php endfor; ?>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+      <?php for($page = 1; $page <= getPagination('post'); $page++): ?>
+        <li class="page-item">
+          <a class="page-link" href="/admin/news/index.php?page=<?=$page?>"><?=$page?></a>
+        </li>
+      <?php endfor; ?>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>
 <?php 
 include '../footer.php';
